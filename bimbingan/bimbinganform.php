@@ -54,7 +54,7 @@ if ($_SESSION["admin"]==1)
 echo '<script>$("#headformid").html('."'".'<a href="#" onClick="savebimbingan();" class="btn btn-info menu">Save</a><a href="#"  class="btn btn-info menu pull-right" onClick="LoadTablebimbingan();">Cancel</a>'."'".')</script>';
 echo '<input type="hidden" id="idtugas" value='.$_POST["id"].' >';
 }
-$cmb = $obj->comboMahasiswa("ygdibimbingid",$Db,$ygdibimbingid,$nmmahasiswa,$active);
+$cmb = $obj->comboMahasiswa("ygdibimbingid",$Db,$ygdibimbingid,$nmmahasiswa);
 echo $obj->ComboSelectGeneralValue("Mahasiswa/wi ",$cmb,$ygdibimbingid);
 
 $Class=" Style='Width:280px;'";

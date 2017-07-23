@@ -82,7 +82,7 @@ $Pagein=$obj->ProductPage($_POST['pageId'],$recordsPerPage,$count);
 $connect = new mysqli($hostname,$username, $password,  $database);
 $var1="1"; 
 if ($_SESSION["admin"]==1)
-{  
+{
 $sql="SELECT tugas.`judultugas`,dosen2.username namadosen2,tugas.`keterangan`,semester.`namasemester`,tugas.`tanggalmulai` ,mahasiswa.`username` nmmahasiswa,dosen.`username` namadosen
 ,tugas.`jumlahpertemuan` , tugas.`id` FROM `tugas`
 INNER JOIN `usertbl` dosen ON `tugas`.pembimbingsatuid=dosen.`id`
@@ -90,7 +90,7 @@ inner join `usertbl` dosen2 ON `tugas`.pembimbingduaid=dosen2.id
 INNER JOIN `usertbl` mahasiswa ON `tugas`.`ygdibimbingid`=mahasiswa.`id`
 INNER JOIN `semester` ON tugas.`semesterid`=semester.id limit ".$start.",".$recordsPerPage;
 
-  echo '<script>$("#headformid").html('."'".'<a href="#" onClick="RefreshProd();" class="btn btn-info menu btn-xs">Refresh</a>'."'".')</script>';
+  echo '<script>$("#headformid").html('."'".'<a style = "margin-right : 10px;" href="#" onClick="tambahBimbingan();" class="btn btn-info menu btn-xs">Tambah</a><a href="#" onClick="RefreshProd();" class="btn btn-info menu btn-xs">Refresh</a>'."'".')</script>';
 } 
 
 if ($_SESSION["admin"]!=1)

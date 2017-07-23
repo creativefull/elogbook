@@ -64,6 +64,24 @@ function loadRefreshTablebimbinganTable(pageId,Vid)
          });
        }
 
+  function tambahBimbingan () {
+    var dataString='id=0&type=tambah';
+    $("#bimbingantblDiv").html('Loading <img src="img/loading6.gif" />');
+    $("#bimbingantblDiv").show();
+    $.ajax({
+      type: "POST",
+      url: "bimbingan/bimbinganform.php",
+      data: dataString,
+      cache: false,
+      success: function(result){ 
+        $("#pagediv").hide();
+        $("#informationApp").html("Tambah Bimbingan");
+        $("#bimbingantblDiv").html(result);
+      }
+    });
+  }
+
+
   function diajukan(vid,idpengajuan) {
         var dataString='id='+vid+"&idpengajuan="+idpengajuan;       
          $("#bimbingantblDiv").html
